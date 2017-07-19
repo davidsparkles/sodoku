@@ -27,7 +27,7 @@ export class Server {
   }
 
   private configureRoutes() {
-    this.app.use('/', express.static('ui'))
+    this.app.use('/', express.static('../ui/dist'))
     
     this.app.get('/api/change/:color', (req, res) => {
       const color = req.params.color
