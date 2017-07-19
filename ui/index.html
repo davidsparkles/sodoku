@@ -2,18 +2,22 @@
   <head>
   </head>
   <body>
+    My color: <span id="mycolor"></span><br>
     <button type="button" onclick="changeColor()">Drück mich!</button>Farbe:<span id="color">blue</span>
     <script>
       const r = Math.random()
-      if (r < 0.5) document.getElementById("color").innerHTML = 'blue'
-      else document.getElementById("color").innerHTML = 'red'
+      let mycolor = ''
+      if (r < 0.5) mycolor = 'blue'
+      else mycolor = 'red'
+      document.getElementById("mycolor").innerHTML = mycolor
+
       function changeColor() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
           }
         };
-        xhttp.open("GET", "/api/change", true);
+        xhttp.open("GET", "/api/change/" + mycolor, true);
         xhttp.send();
       }
       function getColor() {
