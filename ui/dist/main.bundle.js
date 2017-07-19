@@ -1,0 +1,280 @@
+webpackJsonp([1,4],{
+
+/***/ 162:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(73);
+
+
+/***/ }),
+
+/***/ 29:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
+
+
+var DataService = (function () {
+    function DataService(http) {
+        this.http = http;
+    }
+    DataService.prototype.changeColor = function (mycolor) {
+        var url = "api/change/" + mycolor;
+        return this.http.get(url)
+            .toPromise()
+            .then(function (response) {
+            return;
+        });
+    };
+    DataService.prototype.getColor = function (color) {
+        var url = "api/color/" + color;
+        return this.http.get(url)
+            .toPromise()
+            .then(function (response) { return response.text(); });
+    };
+    DataService.ctorParameters = function () { return [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_http__["i" /* Http */] }]; };
+    return DataService;
+}());
+
+//# sourceMappingURL=data.service.js.map
+
+/***/ }),
+
+/***/ 50:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_service__ = __webpack_require__(29);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+
+var AppComponent = (function () {
+    function AppComponent(dataService) {
+        this.dataService = dataService;
+        if (Math.random() < 0.5)
+            this.mycolor = 'blue';
+        else
+            this.mycolor = 'red';
+        this.color = 'red';
+        this.loadColor();
+    }
+    AppComponent.prototype.changeColor = function () {
+        this.dataService.changeColor(this.mycolor);
+    };
+    AppComponent.prototype.loadColor = function () {
+        var _this = this;
+        this.dataService.getColor(this.color)
+            .then(function (color) {
+            _this.color = color;
+            _this.loadColor();
+        });
+    };
+    AppComponent.ctorParameters = function () { return [{ type: __WEBPACK_IMPORTED_MODULE_0__data_service__["a" /* DataService */] }]; };
+    return AppComponent;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 72:
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	throw new Error("Cannot find module '" + req + "'.");
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = 72;
+
+
+/***/ }),
+
+/***/ 73:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__environments_environment__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__gendir_app_app_module_ngfactory__ = __webpack_require__(79);
+
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].production) {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
+}
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* platformBrowser */])().bootstrapModuleFactory(__WEBPACK_IMPORTED_MODULE_3__gendir_app_app_module_ngfactory__["a" /* AppModuleNgFactory */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 77:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_component_scss_shim_ngstyle__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_component__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_data_service__ = __webpack_require__(29);
+/* unused harmony export RenderType_AppComponent */
+/* unused harmony export View_AppComponent_0 */
+/* unused harmony export View_AppComponent_Host_0 */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponentNgFactory; });
+/**
+ * @fileoverview This file is generated by the Angular template compiler.
+ * Do not edit.
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride}
+ */
+/* tslint:disable */
+
+
+
+
+var styles_AppComponent = [__WEBPACK_IMPORTED_MODULE_0__app_component_scss_shim_ngstyle__["a" /* styles */]];
+var RenderType_AppComponent = __WEBPACK_IMPORTED_MODULE_1__angular_core__["_16" /* ɵcrt */]({ encapsulation: 0, styles: styles_AppComponent,
+    data: {} });
+function View_AppComponent_0(_l) {
+    return __WEBPACK_IMPORTED_MODULE_1__angular_core__["_17" /* ɵvid */](0, [(_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ɵted */](null, ['My color: '])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_19" /* ɵeld */](0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ɵted */](null, ['',
+            ''])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_19" /* ɵeld */](0, null, null, 0, 'br', [], null, null, null, null, null)), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ɵted */](null, ['\n'])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_19" /* ɵeld */](0, null, null, 1, 'button', [['type', 'button']], null, [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.changeColor() !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ɵted */](null, ['Drück mich!'])),
+        (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ɵted */](null, ['Farbe:'])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_19" /* ɵeld */](0, null, null, 1, 'span', [['id', 'color']], null, null, null, null, null)), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ɵted */](null, ['', ''])), (_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ɵted */](null, ['\n']))], null, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.mycolor;
+        _ck(_v, 2, 0, currVal_0);
+        var currVal_1 = _co.color;
+        _ck(_v, 9, 0, currVal_1);
+    });
+}
+function View_AppComponent_Host_0(_l) {
+    return __WEBPACK_IMPORTED_MODULE_1__angular_core__["_17" /* ɵvid */](0, [(_l()(), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_19" /* ɵeld */](0, null, null, 1, 'app-root', [], null, null, null, View_AppComponent_0, RenderType_AppComponent)),
+        __WEBPACK_IMPORTED_MODULE_1__angular_core__["_20" /* ɵdid */](49152, null, 0, __WEBPACK_IMPORTED_MODULE_2__app_app_component__["a" /* AppComponent */], [__WEBPACK_IMPORTED_MODULE_3__app_data_service__["a" /* DataService */]], null, null)], null, null);
+}
+var AppComponentNgFactory = __WEBPACK_IMPORTED_MODULE_1__angular_core__["_21" /* ɵccf */]('app-root', __WEBPACK_IMPORTED_MODULE_2__app_app_component__["a" /* AppComponent */], View_AppComponent_Host_0, {}, {}, []);
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiRzovUHJvZ3JhbW1pZXJ1bmcvcmFzcGlzcGFjZS9zb2Rva3UvdWkvc3JjL2FwcC9hcHAuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0c6L1Byb2dyYW1taWVydW5nL3Jhc3Bpc3BhY2Uvc29kb2t1L3VpL3NyYy9hcHAvYXBwLmNvbXBvbmVudC50cyIsIm5nOi8vL0c6L1Byb2dyYW1taWVydW5nL3Jhc3Bpc3BhY2Uvc29kb2t1L3VpL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vRzovUHJvZ3JhbW1pZXJ1bmcvcmFzcGlzcGFjZS9zb2Rva3UvdWkvc3JjL2FwcC9hcHAuY29tcG9uZW50LnRzLkFwcENvbXBvbmVudF9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIk15IGNvbG9yOiA8c3Bhbj57e215Y29sb3J9fTwvc3Bhbj48YnI+XG48YnV0dG9uIHR5cGU9XCJidXR0b25cIiAoY2xpY2spPVwiY2hhbmdlQ29sb3IoKVwiPkRyw7xjayBtaWNoITwvYnV0dG9uPkZhcmJlOjxzcGFuIGlkPVwiY29sb3JcIj57e2NvbG9yfX08L3NwYW4+XG4iLCI8YXBwLXJvb3Q+PC9hcHAtcm9vdD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7O29CQ0FBLCtDQUFVO01BQUE7TUFBQSw0Q0FBTTtNQUFBLE1BQWtCO01BQUEsMERBQUk7TUFBQSxTQUN0QztNQUFBO1FBQUE7UUFBQTtRQUFzQjtVQUFBO1VBQUE7UUFBQTtRQUF0QjtNQUFBLGdDQUE4QztNQUFvQiwyQ0FBTTtVQUFBO1VBQUEsZ0JBQWlCLHdDQUFnQjtVQUFBOztJQUR6RjtJQUFBO0lBQ3lFO0lBQUE7Ozs7b0JDRHpGO01BQUE7YUFBQTtVQUFBOzs7In0=
+//# sourceMappingURL=app.component.ngfactory.js.map
+
+/***/ }),
+
+/***/ 78:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return styles; });
+/**
+ * @fileoverview This file is generated by the Angular template compiler.
+ * Do not edit.
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride}
+ */
+/* tslint:disable */
+/**
+ * @fileoverview This file is generated by the Angular template compiler.
+ * Do not edit.
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride}
+ */ var styles = [''];
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiRzovUHJvZ3JhbW1pZXJ1bmcvcmFzcGlzcGFjZS9zb2Rva3UvdWkvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3Muc2hpbS5uZ3N0eWxlLnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vRzovUHJvZ3JhbW1pZXJ1bmcvcmFzcGlzcGFjZS9zb2Rva3UvdWkvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7OyJ9
+//# sourceMappingURL=app.component.scss.shim.ngstyle.js.map
+
+/***/ }),
+
+/***/ 79:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_app_module__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_component__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component_ngfactory__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_data_service__ = __webpack_require__(29);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModuleNgFactory; });
+/**
+ * @fileoverview This file is generated by the Angular template compiler.
+ * Do not edit.
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride}
+ */
+/* tslint:disable */
+
+
+
+
+
+
+
+
+
+var AppModuleNgFactory = __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* ɵcmf */](__WEBPACK_IMPORTED_MODULE_1__app_app_module__["a" /* AppModule */], [__WEBPACK_IMPORTED_MODULE_2__app_app_component__["a" /* AppComponent */]], function (_l) {
+    return __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* ɵmod */]([__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ComponentFactoryResolver */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* ɵCodegenComponentFactoryResolver */], [[8, [__WEBPACK_IMPORTED_MODULE_3__app_component_ngfactory__["a" /* AppComponentNgFactory */]]], [3, __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ComponentFactoryResolver */]], __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* NgModuleRef */]]),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](5120, __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* LOCALE_ID */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* ɵm */], [[3, __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* LOCALE_ID */]]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_4__angular_common__["a" /* NgLocalization */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["b" /* NgLocaleLocalization */], [__WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* LOCALE_ID */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* Compiler */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* Compiler */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](5120, __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* APP_ID */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ɵf */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](5120, __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* IterableDiffers */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* ɵk */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](5120, __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* KeyValueDiffers */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ɵl */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* ɵe */], [__WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* DOCUMENT */]]),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](6144, __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Sanitizer */], null, [__WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["d" /* HAMMER_GESTURE_CONFIG */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["e" /* HammerGestureConfig */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](5120, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["f" /* EVENT_MANAGER_PLUGINS */], function (p0_0, p1_0, p2_0, p2_1) {
+            return [new __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["g" /* ɵDomEventsPlugin */](p0_0), new __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["h" /* ɵKeyEventsPlugin */](p1_0),
+                new __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["i" /* ɵHammerGesturesPlugin */](p2_0, p2_1)];
+        }, [__WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* DOCUMENT */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* DOCUMENT */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* DOCUMENT */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["d" /* HAMMER_GESTURE_CONFIG */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["j" /* EventManager */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["j" /* EventManager */], [__WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["f" /* EVENT_MANAGER_PLUGINS */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* NgZone */]]),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](135680, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["k" /* ɵDomSharedStylesHost */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["k" /* ɵDomSharedStylesHost */], [__WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* DOCUMENT */]]),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["l" /* ɵDomRendererFactory2 */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["l" /* ɵDomRendererFactory2 */], [__WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["j" /* EventManager */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["k" /* ɵDomSharedStylesHost */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](6144, __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* RendererFactory2 */], null, [__WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["l" /* ɵDomRendererFactory2 */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](6144, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["m" /* ɵSharedStylesHost */], null, [__WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["k" /* ɵDomSharedStylesHost */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Testability */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Testability */], [__WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* NgZone */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["n" /* Meta */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["n" /* Meta */], [__WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* DOCUMENT */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["o" /* Title */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["o" /* Title */], [__WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* DOCUMENT */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* ɵi */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* ɵi */], []),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* BrowserXhr */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* BrowserXhr */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_7__angular_http__["b" /* ResponseOptions */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["c" /* BaseResponseOptions */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](5120, __WEBPACK_IMPORTED_MODULE_7__angular_http__["d" /* XSRFStrategy */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["e" /* ɵb */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_7__angular_http__["f" /* XHRBackend */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["f" /* XHRBackend */], [__WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* BrowserXhr */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_http__["b" /* ResponseOptions */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["d" /* XSRFStrategy */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_7__angular_http__["g" /* RequestOptions */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["h" /* BaseRequestOptions */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](5120, __WEBPACK_IMPORTED_MODULE_7__angular_http__["i" /* Http */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["j" /* ɵc */], [__WEBPACK_IMPORTED_MODULE_7__angular_http__["f" /* XHRBackend */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_http__["g" /* RequestOptions */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](4608, __WEBPACK_IMPORTED_MODULE_8__app_data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_8__app_data_service__["a" /* DataService */], [__WEBPACK_IMPORTED_MODULE_7__angular_http__["i" /* Http */]]),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_4__angular_common__["d" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["d" /* CommonModule */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](1024, __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["p" /* ɵa */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](1024, __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* APP_INITIALIZER */], function (p0_0, p0_1) {
+            return [__WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["q" /* ɵc */](p0_0, p0_1)];
+        }, [[2, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["r" /* NgProbeToken */]], [2, __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* NgProbeToken */]]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* ApplicationInitStatus */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* ApplicationInitStatus */], [[2, __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* APP_INITIALIZER */]]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](131584, __WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* ɵe */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* ɵe */], [__WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* NgZone */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* ɵConsole */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injector */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ComponentFactoryResolver */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* ApplicationInitStatus */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](2048, __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* ApplicationRef */], null, [__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* ɵe */]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* ApplicationModule */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* ApplicationModule */], [__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* ApplicationRef */]]),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["s" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["s" /* BrowserModule */], [[3, __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["s" /* BrowserModule */]]]), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* ɵba */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* ɵba */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* FormsModule */], []), __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_7__angular_http__["k" /* HttpModule */], __WEBPACK_IMPORTED_MODULE_7__angular_http__["k" /* HttpModule */], []),
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* ɵmpd */](512, __WEBPACK_IMPORTED_MODULE_1__app_app_module__["a" /* AppModule */], __WEBPACK_IMPORTED_MODULE_1__app_app_module__["a" /* AppModule */], [])]);
+});
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiRzovUHJvZ3JhbW1pZXJ1bmcvcmFzcGlzcGFjZS9zb2Rva3UvdWkvc3JjL2FwcC9hcHAubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0c6L1Byb2dyYW1taWVydW5nL3Jhc3Bpc3BhY2Uvc29kb2t1L3VpL3NyYy9hcHAvYXBwLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+//# sourceMappingURL=app.module.ngfactory.js.map
+
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 81:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
+var environment = {
+    production: false
+};
+//# sourceMappingURL=environment.js.map
+
+/***/ })
+
+},[162]);
+//# sourceMappingURL=main.bundle.js.map
