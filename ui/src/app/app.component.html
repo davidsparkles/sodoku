@@ -1,2 +1,35 @@
 My color: <span>{{mycolor}}</span><br>
-<button type="button" (click)="changeColor()">Drück mich!</button>Farbe:<span id="color">{{color}}</span>
+<div class="field">
+  <ul>
+    <li *ngFor="let box of field">
+      <div>
+        <button
+          class="base"
+          *ngIf="box.base !== 0">
+            {{box.base}}
+        </button>
+        <button
+          [class.blue]="box.blue !== 0 && selected !== box.index"
+          [class.selected]="selected === box.index"
+          *ngIf="box.base === 0 && mycolor === 'red'"
+          (click)="select(box.index)">
+            {{box.red}}
+        </button>
+        <button
+          [class.red]="box.red !== 0 && selected !== box.index"
+          [class.selected]="selected === box.index"
+          *ngIf="box.base === 0 && mycolor === 'blue'"
+          (click)="select(box.index)">
+            {{box.blue}}
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="numberBlock">
+  <ul>
+    <li *ngFor="let index of numberBlock">
+      <button (click)="changeBox(index)">{{index}}</button>
+    </li>
+  </ul>
+</div>
