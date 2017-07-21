@@ -41,7 +41,8 @@ export class Server {
       res.sendStatus(200)
       const data = {
         field: this.gameHandler.getField(),
-        changeId: this.gameHandler.getChangeId()
+        changeId: this.gameHandler.getChangeId(),
+          winner: this.gameHandler.getWinner()
       }
       this.pushHandler.resolveOpenPromises(data)
     })
@@ -51,7 +52,8 @@ export class Server {
       if (this.gameHandler.getChangeId() > changeId) {
         const data = {
           field: this.gameHandler.getField(),
-          changeId: this.gameHandler.getChangeId()
+          changeId: this.gameHandler.getChangeId(),
+          winner: this.gameHandler.getWinner()
         }
         res.status(200).send(data)
       } else {
